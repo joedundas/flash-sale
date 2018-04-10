@@ -8,7 +8,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class CompanyRoles extends Eloquent implements UserInterface, RemindableInterface {
 
     use UserTrait, RemindableTrait;
-
+    use SelectsAndJoinsTrait;
     /**
      * The database table used by the model.
      *
@@ -25,12 +25,12 @@ class CompanyRoles extends Eloquent implements UserInterface, RemindableInterfac
 
     protected $guarded = array('id');
 
-
-
     public function __construct()
     {
 
     }
+
+
 
 
 

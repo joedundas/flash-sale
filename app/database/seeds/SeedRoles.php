@@ -1,6 +1,6 @@
 <?php
 
-class SeedUsers extends Seeder
+class SeedRoles extends Seeder
 {
     public function run() {
 

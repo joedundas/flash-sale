@@ -22,8 +22,13 @@ class CompanyRolesController extends BaseController {
 
     public function getUsersCompanyList($userId = null) {
         if($userId === null) {
-            $userId = Auth::user()->id;
+            $results = CompanyRoles::authedUser()->get();
         }
+        else {
+            $results = [];
+        }
+
+        return array('output'=>array('results'=>$results));
     }
 
 }

@@ -19,7 +19,7 @@ Route::match(array('GET','POST'),'/ajax/auth/login','AuthenticationController@lo
 Route::match(array('GET','POST'),'/ajax/auth/logout','AuthenticationController@doLogout');
 Route::match(array('GET','POST'),'/ajax/company/get',array('before'=>'auth', 'uses'=>'CompaniesController@get'));
 Route::match(array('GET','POST'),'/ajax/company/add',array('before'=>'auth', 'uses'=>'CompaniesController@add'));
-
+Route::match(array('GET','POST'),'/ajax/company/list',array('before'=>'auth', 'uses'=>'CompanyRolesController@getUsersCompanyList'));
 
 
 Route::match(array('GET','POST'),'dashboard',array('before'=>'auth',function() {

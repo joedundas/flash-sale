@@ -113,6 +113,42 @@ $pageName = TextProcessor::process('{%Company.plural%} List');
 
 @section('pageHeaderJS')
     <script>
+        var companies = new companyRolesController(loadData);
+        $(document).ready(function() {
+            companies.get();
+        });
+        function companyRolesController(callback) {
+            "use strict";
+            var me = this;
+            me.data = null;
+            me.callback = function(dta) {
+                alert("You should give me a callback function");
+            };
+            if(typeof callback === 'function') {
+                me.callback = callback;
+            }
+
+            me.get = function(input) {
+                controller.page.ajax.send(
+                    {
+                        url:'/ajax/company/list',
+                        data:{
+                        },
+                        'callback': {
+                            'success':me.receive
+                        }
+                    }
+                );
+            };
+            me.receive = function(data) {
+                me.data = data.results;
+                me.callback(me.data);
+            }
+        }
+
+        function loadData(dta) {
+            alert(JSON.stringify(dta));
+        }
 //        var countdowns = new countdownsController();
 //        $(document).ready(function() {
 //

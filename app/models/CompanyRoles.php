@@ -30,6 +30,10 @@ class CompanyRoles extends Eloquent implements UserInterface, RemindableInterfac
 
     }
 
+    public function scopeAuthedUser($query) {
+        return $query->where('company_roles.userId','=',Auth::user()->id);
+    }
+
 
 
 

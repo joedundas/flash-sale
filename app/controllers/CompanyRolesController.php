@@ -27,8 +27,11 @@ class CompanyRolesController extends BaseController {
         else {
             $results = [];
         }
-
-        return array('output'=>array('results'=>$results));
+        $passback = [];
+        foreach($results as $idx=>$result) {
+            $passback[] = $result;
+        }
+        return array('output'=>array('results'=>$results->toArray()));
     }
 
 }

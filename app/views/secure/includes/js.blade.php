@@ -53,6 +53,7 @@
 <!-- fox_admin App -->
 <script src="/js/template.js"></script>
 
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 
 {{--<script src="//www.fuelcdn.com/fuelux/3.13.0/js/fuelux.min.js"></script>--}}
 

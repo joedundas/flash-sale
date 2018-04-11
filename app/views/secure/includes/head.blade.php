@@ -7,6 +7,7 @@
 
 <title> {{TextProcessor::display('{%appName.plain%}')}}- @yield('pageTitle')</title>
 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 
 
 
@@ -39,6 +40,7 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 
 
 <script src="/js/global.js"></script>

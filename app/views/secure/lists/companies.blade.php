@@ -35,12 +35,14 @@ $companies = $companies['output']['results'];
 
         <!-- /.row -->
         <div class="row">
+
             <div class="col-12">
                 <div class="box">
-                    {{--<div class="box-header">--}}
-                        {{--<h3 class="box-title"><a href="company/add">{{ TextProcessor::display('Add New {%Company.singular%}') }}</a></h3>--}}
+                    <div class="box-header">
 
-                    {{--</div>--}}
+                        <h3 class="box-title"><a href="company/add">{{ TextProcessor::display('Add New {%Company.singular%}') }}</a></h3>
+
+                    </div>
                     <!-- /.box-header -->
                     <div class="box-body no-padding">
                         <table  id="companyListTable">

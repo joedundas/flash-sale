@@ -50,8 +50,6 @@ $companies = $companies['output']['results'];
                                 <th>{{ TextProcessor::display('{%Company.singular%} Name') }}</th>
                                 <th>Role</th>
                                 <th>{{ TextProcessor::display('{%Campaign.plural%}') }}</th>
-                                {{--<th>Status</th>--}}
-                                {{--<th>Country</th>--}}
                             </tr>
                             </thead>
                             <tbody>

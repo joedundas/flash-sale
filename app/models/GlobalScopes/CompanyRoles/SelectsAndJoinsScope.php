@@ -1,11 +1,9 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: joedundas
- * Date: 4/10/18
- * Time: 10:23 AM
- */
+use Illuminate\Database\Query\Builder as BaseBuilder;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\ScopeInterface;
+
 class SelectsAndJoinsScope implements ScopeInterface
 {
     public function apply(Builder $builder) {
@@ -20,9 +18,11 @@ class SelectsAndJoinsScope implements ScopeInterface
             'companies.companyName as companyName',
             'roles.title as roleTitle',
             'roles.description as roleDescription'
-        )
-            ->join('users','company_roles.userId','=','users.id')
+        )->join('users','company_roles.userId','=','users.id')
             ->join('companies','company_roles.companyId','=','companies.id')
             ->join('roles','company_roles.roleId','=','roles.id');
+    }
+    public function remove(Builder $builder) {
+
     }
 }

@@ -43,5 +43,20 @@ class ValidationController extends BaseController {
         return array();
     }
 
+    static public function campaignInformation($data) {
+        $validator = \Illuminate\Support\Facades\Validator::make(
+            $data,
+            array(
+                'companyId'=>'required|integer|exists:company_roles,companyId,userId,' . Auth::user()->id,
+                'campaignName'=>'required',
+            )
+        );
+
+        if($validator->fails()) {
+            return $validator->messages();
+        }
+        return array();
+    }
+
 
 }

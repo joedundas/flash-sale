@@ -18,8 +18,8 @@ $companies = $companies['output']['results'];
         {{ Form::open(array()) }}
 
         <div class="col-sm-9" style="padding:0px; display:inline-block; margin-bottom:10px;">
-            {{ Form::label('compamny','Company',array('class'=>'col-sm-2','style'=>'text-align:right;')) }}
-            <select class="form-control select2" id='company' style="display:inline; width:auto">
+            {{ Form::label('compamnyId','Company',array('class'=>'col-sm-2','style'=>'text-align:right;')) }}
+            <select class="form-control select2" id='companyId' style="display:inline; width:auto">
                 @foreach($companies as $idx=>$company)
                     <option value="{{$company['companyId']}}">{{$company['companyName']}}</option>
                 @endforeach
@@ -78,7 +78,7 @@ $companies = $companies['output']['results'];
                 }
             );
             function finishSave(dta) {
-                window.location.href = "/company/add";
+                window.location.href = "/campaigns/add";
             }
         });
 
@@ -145,11 +145,20 @@ $companies = $companies['output']['results'];
         var formElements = [
 
             {
-                'id':'companyName',
+                'id':'companyId',
                 'required':{
                     'always':true,
                 },
-                'desc':'Company Name',
+                'desc':'Company',
+                'type':'select'
+            },
+
+            {
+                'id':'campaignName',
+                'required':{
+                    'always':true,
+                },
+                'desc':'Campaign Name',
                 'type':'text'
             }
 

@@ -21,6 +21,8 @@ Route::match(array('GET','POST'),'/ajax/company/get',array('before'=>'auth', 'us
 Route::match(array('GET','POST'),'/ajax/company/add',array('before'=>'auth', 'uses'=>'CompaniesController@add'));
 Route::match(array('GET','POST'),'/ajax/company/list',array('before'=>'auth', 'uses'=>'CompanyRolesController@getUsersCompanyList'));
 
+Route::match(array('GET','POST'),'/ajax/campaign/add',array('before'=>'auth', 'uses'=>'CampaignsController@add'));
+
 
 Route::match(array('GET','POST'),'dashboard',array('before'=>'auth',function() {
     return View::make('secure.dashboard.layout');
@@ -31,6 +33,9 @@ Route::match(array('GET','POST'),'companies/{searchBy?}/{searchTerm?}',array('be
 
 Route::match(array('GET','POST'),'campaigns',array('before'=>'auth',function() {
     return View::make('secure.lists.campaigns');
+}));
+Route::match(array('GET','POST'),'campaigns/add',array('before'=>'auth',function() {
+    return View::make('secure.forms.campaign');
 }));
 
 Route::match(array('GET','POST'),'company/add',array('before'=>'auth',function() {
